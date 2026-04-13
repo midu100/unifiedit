@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0D2142"/>
+      <stop offset="0.55" stop-color="#05142B"/>
+      <stop offset="1" stop-color="#020A16"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1180 240) rotate(135) scale(520 420)">
+      <stop stop-color="#3385FF" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#3385FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(420 640) rotate(-25) scale(620 480)">
+      <stop stop-color="#0066FF" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#0066FF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="wave" x1="0" y1="0" x2="1600" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3385FF" stop-opacity="0"/>
+      <stop offset="0.55" stop-color="#3385FF" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#3385FF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="blur" x="-200" y="-200" width="2000" height="1300" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#glow1)"/>
+  <rect width="1600" height="900" fill="url(#glow2)"/>
+
+  <g filter="url(#blur)" opacity="0.95">
+    <path d="M-60 610C160 520 420 510 650 585C880 660 1060 700 1320 630C1480 586 1585 520 1700 470V930H-60V610Z" fill="url(#wave)"/>
+    <path d="M-60 710C170 620 470 590 720 690C970 790 1110 820 1350 770C1505 736 1600 680 1700 640V930H-60V710Z" fill="url(#wave)" opacity="0.85"/>
+  </g>
+</svg>
