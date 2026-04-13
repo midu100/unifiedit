@@ -46,25 +46,48 @@ const MobileMenu = ({ mobileOpen, setMobileOpen }) => {
                                         </summary>
                                         <div className="pl-3 flex flex-col gap-2 pb-2">
                                             {item.items.map((sub) => (
-                                                <NavLink
-                                                    key={sub.label}
-                                                    to={sub.to || '/'}
-                                                    onClick={() => setMobileOpen(false)}
-                                                    className="text-sm text-gray-600 hover:text-blue-600 transition"
-                                                >
-                                                    {sub.label}
-                                                </NavLink>
+                                                sub.href ? (
+                                                    <a
+                                                        key={sub.label}
+                                                        href={sub.href}
+                                                        target="_blank" rel="noopener noreferrer"
+                                                        onClick={() => setMobileOpen(false)}
+                                                        className="text-sm text-gray-600 hover:text-blue-600 transition"
+                                                    >
+                                                        {sub.label}
+                                                    </a>
+                                                ) : (
+                                                    <NavLink
+                                                        key={sub.label}
+                                                        to={sub.to || '/'}
+                                                        onClick={() => setMobileOpen(false)}
+                                                        className="text-sm text-gray-600 hover:text-blue-600 transition"
+                                                    >
+                                                        {sub.label}
+                                                    </NavLink>
+                                                )
                                             ))}
                                         </div>
                                     </details>
                                 ) : (
-                                    <NavLink
-                                        to={item.to || '/'}
-                                        onClick={() => setMobileOpen(false)}
-                                        className="block py-3 text-[15px] font-medium text-gray-800 hover:text-blue-600 transition"
-                                    >
-                                        {item.label}
-                                    </NavLink>
+                                    item.href ? (
+                                        <a
+                                            href={item.href}
+                                            target="_blank" rel="noopener noreferrer"
+                                            onClick={() => setMobileOpen(false)}
+                                            className="block py-3 text-[15px] font-medium text-gray-800 hover:text-blue-600 transition"
+                                        >
+                                            {item.label}
+                                        </a>
+                                    ) : (
+                                        <NavLink
+                                            to={item.to || '/'}
+                                            onClick={() => setMobileOpen(false)}
+                                            className="block py-3 text-[15px] font-medium text-gray-800 hover:text-blue-600 transition"
+                                        >
+                                            {item.label}
+                                        </NavLink>
+                                    )
                                 )}
                             </div>
                         ))}
